@@ -188,9 +188,9 @@ public final class MongoSocket: MongoTCP {
                     let bytes = [UInt8](data)
                     
                     if let certBytes = CFDataCreate(kCFAllocatorDefault, bytes, data.count), let cert = SecCertificateCreateWithData(kCFAllocatorDefault, certBytes) {
-                        guard SSLSetCertificateAuthorities(context, cert, true) == 0 else {
-                            throw Error.cannotConnect
-                        }
+                        // guard SSLSetCertificateAuthorities(context, cert, true) == 0 else {
+                        //     throw Error.cannotConnect
+                        // }
                     }
                 }
                 
